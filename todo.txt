@@ -1,0 +1,5 @@
+legge til animasjon når man har max antall stempel
+random ikon som stempler
+feilmelding: bruker ikke funnet (vil ikke bli aktuelt)
+flytte tilbakeknappen
+angreknapp 

@@ -1,0 +1,75 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+#qrCode {
+    
+    width: 480px;
+    height: 60px;
+    border-radius: 25px;
+    border: 2px solid rgb(165, 150, 150);
+    margin: 250px 0 15px;
+    font-size: 1.3em;
+    background-color: rgba(139, 130, 130, 0.103);
+    padding: 20px;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start;
+    min-height: 70vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info {
+    color: red;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.stampCards {
+    align-self: flex-start;
+}
+
+.programContainer {
+    /* border: 1px solid blue; */
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.stampBox {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: green;
+}
+
+.stampBox:nth-last-child(2) {
+    margin-right: 50px;
+    background-color: rgba(200, 226, 200, 0.5);
+}
+
+.addStamp {
+    height: 50px;
+    margin-left: auto;
+}
+
+.usedCoupon {
+    background-color: rgba(128, 128, 128, 0.575) !important;
+    color: red;
+}

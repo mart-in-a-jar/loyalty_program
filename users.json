@@ -1,0 +1,60 @@
+{
+    "users": [
+      {
+          "guid": "405b03e0-6afc-eb11-94ef-000d3a2017ea",
+          "rewardPrograms":
+          [
+              {
+                  "id": 3,
+                  "department": "bookstore",
+                  "name": 
+                  {
+                      "no": "Halv pris på hver 5. bok",
+                      "en": "Half price on every 5th. book"
+                  },
+                  "type": "open",
+                  "status": "active",
+                  "description":
+                      {
+                       "public": 
+                       {
+                           "no": "Norsk beskrivelse til appen, klippekort",
+                           "en": "English description for the app, stamp card"
+                       },
+                       "internal": "Beskrivelse til ansatte, klippekort"
+                    },
+                    "stamps":
+                    {
+                        "current": 2,
+                        "max": 5
+                    }
+                },
+                {
+                    "id": 2,
+                    "department": "bookstore",
+                    "name": 
+                    {
+                        "no": "Kupong på gratis penn",
+                        "en": "Coupon: free pen"
+                    },
+                    "type": "manual",
+                    "status": "active",
+                    "description":
+                        {
+                         "public": 
+                         {
+                             "no": "Norsk beskrivelse til appen, kupong",
+                             "en": "English description for the app, coupon"
+                         },
+                         "internal": "Beskrivelse til ansatte, kupong"
+                      },
+                      "stamps":
+                      {
+                          "current": 0,
+                          "max": 1
+                      }
+                  }
+          ]
+      }
+    ]
+  }
