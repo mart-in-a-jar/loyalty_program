@@ -9,10 +9,6 @@ const input = document.querySelector("#qrCode");
 const guidRegex = /[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}/;
 const infoBox = document.querySelector(".info");
 
-try {
-    users = JSON.parse(localStorage.getItem("users"));
-}
-catch(err) {}
 
 // Search users
 window.addEventListener("keypress", e => {
@@ -34,12 +30,21 @@ window.addEventListener("keypress", e => {
 
 
 function importUsers() {
-fetch("users.json").then(response => response.json()).then(jsonResponse => localStorage.setItem("users", JSON.stringify(jsonResponse.users)));
-users = JSON.parse(localStorage.getItem("users"));
-console.log("Ok");
+fetch("users.json").then(response => response.json()).then(jsonResponse => users = jsonResponse.users);
+setTimeout(() => {
+    localStorage.setItem("users", JSON.stringify(users));
+}, 100);
+}
+
+function importUsersBackup() {
+    
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    try {
+        users = JSON.parse(localStorage.getItem("users"));
+    }
+    catch(err) {}
     if (!users) {
         importUsers();
     }
