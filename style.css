@@ -76,10 +76,11 @@ h1 {
     animation: pulsate 4s linear infinite;
 }
 
-.stampBox:nth-last-child(2) svg:after {
+.stampBox:nth-last-child(2) span:after {
     content: "Bonus på neste";
+    position: absolute;
+    transform: translate(-60px, 35px)
 }
-
 
 .addStamp {
     height: 50px;
