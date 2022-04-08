@@ -66,8 +66,10 @@ function drawStampCard(program) {
     for (let i = 0; i < program.length; i++) {
         if (program[i].status === "inactive") continue;
         let programContainer = document.createElement("div");
+        let programContainerContainer = document.createElement("div");
         let heading = document.createElement("h2");
         heading.textContent = program[i].name.no;
+        programContainerContainer.classList.add("programContainerContainer");
         programContainer.setAttribute("data-id", program[i].id);
         programContainer.classList.add("programContainer");
         for (let j = 0; j < program[i].stamps.max; j++) {
@@ -78,8 +80,9 @@ function drawStampCard(program) {
             }
             programContainer.appendChild(stampBox);
         }
-        cardContainer.appendChild(heading);
-        cardContainer.appendChild(programContainer);
+        cardContainer.appendChild(programContainerContainer);
+        programContainerContainer.appendChild(heading);
+        programContainerContainer.appendChild(programContainer);
         let button = document.createElement("button");
         button.setAttribute("type", "button");
         button.setAttribute("data-id", program[i].id);

@@ -1,39 +1,81 @@
 html {
     box-sizing: border-box;
+    --bgColor: #B5DBC6;
+    --altColor: #E1F6EB;
+    --blackColor: #2D2D2D;
+    font-family: "TTCommons-regular", sans-serif;
 }
 *, *:before, *:after {
     box-sizing: inherit;
 }
 
+@font-face {
+    font-family: TTCommons-regular;
+    src: url(fonts/TTCommons-Regular.ttf);
+}
+@font-face {
+    font-family: TTCommons-demibold;
+    src: url(fonts/TTCommons-DemiBold.ttf);
+}
+@font-face {
+    font-family: TTCommons-medium;
+    src: url(fonts/TTCommons-Medium.ttf);
+}
+
 @keyframes pulsate {
     0% {
-        transform: scale(1);
+        transform: scale(1.1) rotate(-10deg);
     }
     50% {
-        transform: scale(1.2);
+        transform: scale(1.2) rotate(10deg);
     }
     100% {
-        transform: scale(1);
+        transform: scale(1.1) rotate(-10deg);
     }
 }
 
+#logo {
+    position: absolute;
+    margin: 8px 40px;
+}
+
 h1 {
-    font-size: 3rem;
+    font-size: 88px;
     align-self: center;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: -2.12px;
+    font-family: "TTCommons-mediun", sans-serif;
+}
+
+h2 {
+    margin: 0;
+    margin-left: 15px;
+    font-family: "TTCommons-mediun", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: -0.44px;
 }
 
 #qrCode {
     
-    width: 480px;
-    height: 60px;
-    border-radius: 25px;
-    border: 2px solid rgb(165, 150, 150);
+    width: 580px;
+    height: 80px;
+    border-radius: 20px;
+    border: 1.5px solid var(--blackColor);
     margin: 250px 0 15px;
     font-size: 1.3em;
-    background-color: rgba(139, 130, 130, 0.103);
-    padding: 20px;
-    text-align: center;
+    padding: 23px 23px 23px 71px;
+    /* text-align: center; */
     align-self: center;
+    background: url(img/search-icon.svg);
+    background-repeat: no-repeat;
+    background-position: 15px;
+    background-color: #ffffff;
+}
+
+body {
+    margin: 0;
 }
 
 .content {
@@ -43,6 +85,8 @@ h1 {
     align-items: flex-start;
     flex-direction: column;
     position: relative;
+    background-color: var(--bgColor);
+    padding: 20px;
 }
 
 .info {
@@ -51,20 +95,31 @@ h1 {
     font-weight: 500;
 }
 
+.programContainerContainer {
+    background-color: var(--altColor);
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    border: 1.5px solid var(--blackColor);
+}
+
 .programContainer {
     display: flex;
     align-items: center;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
 
 .stampBox {
     width: 55px;
     height: 60px;
-    border: 1px solid black;
+    border: 1px solid rgba(80, 80, 80, 0.226);
     margin: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
+    background-color: rgba(250, 235, 215, 0.521);
+    background: no-repeat center/80% url(img/book.svg);
 }
 
 .stampBox:nth-last-child(2) {
@@ -73,18 +128,33 @@ h1 {
 }
 
 .stampBox:nth-last-child(2) svg {
-    animation: pulsate 4s linear infinite;
+    animation: pulsate 2s linear infinite;
 }
 
 .stampBox:nth-last-child(2) span:after {
-    content: "Bonus på neste";
+    content: "Bonus på neste!";
     position: absolute;
-    transform: translate(-60px, 35px)
+    transform: translate(-60px, 35px);
+    font-size: 1.1rem;
+    font-style: italic;
 }
 
 .addStamp {
     height: 50px;
     margin-left: auto;
+    border-radius: 40px;
+    border: 1.5px solid #9b9b9b;
+    background-color: white;
+    padding: 10.5px 27px;
+    font-weight: 400;
+    font-size: 1.125rem;
+    cursor: pointer;
+}
+
+.addStamp:hover {
+    background-color: black;
+    color: white;
+    border: 1.5px solid black;
 }
 
 .usedCoupon {
@@ -100,8 +170,9 @@ h1 {
     padding: 15px 25px;
     border-radius: 10px;
     position: absolute;
-    top: 15px;
+    top: 160px;
     left: 15px;
+    font-size: 1.125rem;
 }
 
 .back a:hover {
@@ -111,4 +182,3 @@ h1 {
 svg {
     width: 45px;
 }
-
