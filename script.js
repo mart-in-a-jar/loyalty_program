@@ -54,6 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+input.addEventListener("blur", () => {
+    setTimeout(() => {
+        input.focus(); 
+    }, 20);
+});
+
 const usersManual = [
     {
         "guid": "40f94485-bf31-401f-b10b-a06554cfdaba",

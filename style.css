@@ -63,7 +63,7 @@ h2 {
     height: 80px;
     border-radius: 20px;
     border: 1.5px solid var(--blackColor);
-    margin: 250px 0 15px;
+    margin: 120px 0 100px;
     font-size: 1.3em;
     padding: 23px 23px 23px 71px;
     /* text-align: center; */
@@ -72,6 +72,10 @@ h2 {
     background-repeat: no-repeat;
     background-position: 15px;
     background-color: #ffffff;
+}
+
+#qrCode:focus {
+    outline: none;
 }
 
 body {
