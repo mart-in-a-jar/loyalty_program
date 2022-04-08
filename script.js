@@ -30,7 +30,7 @@ window.addEventListener("keypress", e => {
 
 
 function importUsers() {
-fetch("users.json").then(response => response.json()).then(jsonResponse => users = jsonResponse.users);
+fetch("users/users.json").then(response => response.json()).then(jsonResponse => users = jsonResponse.users);
 setTimeout(() => {
     localStorage.setItem("users", JSON.stringify(users));
 }, 100);

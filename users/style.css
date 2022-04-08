@@ -1,0 +1,24 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+figure img {
+    /* flex: 1 1 auto; */
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-width: 400px;
+    min-width: 200px;
+}
+
+
+.qr-container {
+    display: flex;
+    flex-wrap: wrap;
+}

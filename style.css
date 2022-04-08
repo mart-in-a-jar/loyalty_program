@@ -7,6 +7,7 @@ html {
 
 h1 {
     font-size: 3rem;
+    align-self: center;
 }
 
 #qrCode {
@@ -20,14 +21,16 @@ h1 {
     background-color: rgba(139, 130, 130, 0.103);
     padding: 20px;
     text-align: center;
+    align-self: center;
 }
 
 .content {
     display: flex;
     justify-content: flex-start;
     min-height: 70vh;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
+    position: relative;
 }
 
 .info {
@@ -36,12 +39,7 @@ h1 {
     font-weight: 500;
 }
 
-.stampCards {
-    align-self: flex-start;
-}
-
 .programContainer {
-    /* border: 1px solid blue; */
     display: flex;
     align-items: center;
     margin-bottom: 60px;
@@ -72,4 +70,20 @@ h1 {
 .usedCoupon {
     background-color: rgba(128, 128, 128, 0.575) !important;
     color: red;
+}
+
+
+.back a{
+    color: black;
+    text-decoration: none;
+    background-color: rgb(226, 129, 116);
+    padding: 15px 25px;
+    border-radius: 10px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.back a:hover {
+    outline: 2px solid black;
 }

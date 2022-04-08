@@ -12,6 +12,8 @@ function getRandomStamp() {
     
 }
 
+document.querySelector(".userName").textContent = currentUser.name;
+
 function appendStamp(programId) {
     const programIndex = currentUser.rewardPrograms.findIndex(prog => prog.id === +programId);
     const max = currentUser.rewardPrograms[programIndex].stamps.max;
