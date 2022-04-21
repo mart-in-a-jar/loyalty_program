@@ -191,3 +191,13 @@ body {
 svg {
     width: 45px;
 }
+
+.bonusCount {
+    color: red;
+    font-size: 2rem;
+    margin: -10px 15px 0px;
+}
+
+.bonusTriggered {
+    
+}
