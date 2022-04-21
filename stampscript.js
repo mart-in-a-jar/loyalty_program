@@ -48,7 +48,7 @@ function appendStamp(programId) {
             stampBoxes.forEach(box => box.textContent = "");
             // Increase by one for each time the stamps reset back to 0
             numberOfBonuses[programId] = numberOfBonuses[programId] ? numberOfBonuses[programId] + 1 : 1;
-            bonusCountInfo.textContent = `Antall bonuser for denne handel: ${numberOfBonuses[programId]}`;
+            bonusCountInfo.textContent = `Antall bonuser for denne handel: \u00a0 ${numberOfBonuses[programId]}`;
             program.classList.add("bonusTriggered");
         }
         else {
@@ -60,7 +60,7 @@ function appendStamp(programId) {
         }
     }
     else if (currentUser.rewardPrograms[programIndex].type === "manual") {
-        stampBoxes[current].textContent = "XX"
+        stampBoxes[current].textContent = "X"
         stampBoxes[current].classList.add("usedCoupon");
         currentUser.rewardPrograms.splice(programIndex, 1);
 

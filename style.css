@@ -34,6 +34,21 @@ html {
     }
 }
 
+@keyframes scaleInOut {
+    from {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    to {
+        transform: scale(1);
+    }
+    
+}
+
 #logo {
     position: absolute;
     margin: 8px 40px;
@@ -118,6 +133,27 @@ body {
     margin-bottom: 20px;
 }
 
+.bonusTriggered {
+    /* rainbow */
+    /* background: linear-gradient(45deg, #660166, #e6ba1a, #1080a1, #00877d, #e16c1e, #dd3264); */
+    background-image: url("data:image/svg+xml,<svg width='50px' height='50px' opacity='50%' xmlns='http://www.w3.org/2000/svg'><text x='0' y='30px' font-size='30px' clip-path='url(%23emojiClipPath)'>⭐</text></svg>");
+    background-repeat: space;
+    animation: scaleInOut 0.9s infinite;
+}
+
+.bonusTriggered h2,
+.bonusTriggered .bonusCount,
+.bonusTriggered .stampBox:last-of-type span:after {
+    background-color: var(--altColor);
+    display: inline-block;
+    border: 2px solid rgba(0, 0, 0, 0.253);
+    padding: 3px 15px;
+}
+
+.bonusTriggered .stampBox {
+    background-color: var(--altColor);
+}
+
 .stampBox {
     width: 55px;
     height: 60px;
@@ -127,20 +163,19 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    background-color: rgba(250, 235, 215, 0.521);
     background: no-repeat center/80% url(img/book.svg);
 }
 
-.stampBox:nth-last-child(2) {
+.stampBox:last-of-type {
     margin-right: 50px;
     background-color: rgba(200, 226, 200, 0.5);
 }
 
-.stampBox:nth-last-child(2) svg {
+.stampBox:last-of-type svg {
     animation: pulsate 2s linear infinite;
 }
 
-.stampBox:nth-last-child(2) span:after {
+.stampBox:last-of-type span:after {
     content: "Bonus på neste!";
     position: absolute;
     transform: translate(-60px, 35px);
@@ -169,6 +204,8 @@ body {
 .usedCoupon {
     background-color: rgba(128, 128, 128, 0.575) !important;
     color: red;
+    font-size: 4.2rem;
+    font-weight: bold;
 }
 
 
@@ -193,11 +230,8 @@ svg {
 }
 
 .bonusCount {
-    color: red;
+    color: rgb(211, 68, 68);
+    -webkit-text-stroke: rgb(255, 255, 255) 0.5px;
     font-size: 2rem;
     margin: -10px 15px 0px;
-}
-
-.bonusTriggered {
-    
 }
