@@ -146,7 +146,7 @@ body {
 }
 
 .bonusTriggered h2,
-.bonusTriggered .bonusCount, {
+.bonusTriggered .bonusCount {
     background-color: var(--altColor);
     display: inline-block;
     border: 2px solid rgba(0, 0, 0, 0.253);
@@ -258,4 +258,10 @@ svg {
     -webkit-text-stroke: rgb(255, 255, 255) 0.5px;
     font-size: 2rem;
     margin: -10px 15px 0px;
+}
+
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
 }
