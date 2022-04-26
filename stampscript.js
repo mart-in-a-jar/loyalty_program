@@ -47,19 +47,24 @@ function appendStamp(programId) {
             stampBoxes.forEach(box => box.textContent = "");
             currentUser.rewardPrograms[programIndex].stamps.current = 1;
             writeStamp(stampBoxes[0]);
-            // Increase by one for each time the stamps reset back to 0
-            numberOfBonuses[programId] = numberOfBonuses[programId] ? numberOfBonuses[programId] + 1 : 1;
-            bonusCountInfo.textContent = `Antall bonuser for denne handel: \u00a0 ${numberOfBonuses[programId]}`;
-            program.classList.add("bonusTriggered");
         }
         else {
             currentUser.rewardPrograms[programIndex].stamps.current += 1;
             writeStamp(stampBoxes[current]);
+            if (current === max -1) {
+                // Increase by one for each time the stamps reset back to 0
+                numberOfBonuses[programId] = numberOfBonuses[programId] ? numberOfBonuses[programId] + 1 : 1;
+                bonusCountInfo.textContent = `Antall bonuser for denne handel: \u00a0 ${numberOfBonuses[programId]}`;
+                program.classList.add("bonusTriggered");
+            }
         }
     }
     else if (currentUser.rewardPrograms[programIndex].type === "manual") {
-        stampBoxes[current].textContent = "X"
+        // stampBoxes[current].textContent = "X"
         stampBoxes[current].classList.add("usedCoupon");
+        program.classList.add("bonusTriggered");
+        bonusCountInfo.textContent = "Kupong benyttet";
+        writeStamp(stampBoxes[0]);
         currentUser.rewardPrograms.splice(programIndex, 1);
 
     }
@@ -81,7 +86,7 @@ function drawStampCard(program) {
         programContainer.setAttribute("data-id", program[i].id);
         programContainer.classList.add("programContainer");
         for (let j = 0; j < program[i].stamps.max; j++) {
-            if (program[i].stamps.current === program[i].stamps.max) {
+            if (program[i].stamps.current === program[i].stamps.max && program[i].stamps.max != 1) {
                 program[i].stamps.current = 0;
             }
             let stampBox = document.createElement("div");
