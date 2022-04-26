@@ -53,10 +53,6 @@ function appendStamp(programId) {
             program.classList.add("bonusTriggered");
         }
         else {
-            if (current === max-1) {
-                // writeStamp(stampBoxes[current +1]);
-                // currentUser.rewardPrograms[programIndex].stamps.current = 0;
-            }
             currentUser.rewardPrograms[programIndex].stamps.current += 1;
             writeStamp(stampBoxes[current]);
         }
@@ -85,10 +81,12 @@ function drawStampCard(program) {
         programContainer.setAttribute("data-id", program[i].id);
         programContainer.classList.add("programContainer");
         for (let j = 0; j < program[i].stamps.max; j++) {
-            // if (program[i].stamps.current === program[i].stamps.max)
+            if (program[i].stamps.current === program[i].stamps.max) {
+                program[i].stamps.current = 0;
+            }
             let stampBox = document.createElement("div");
             stampBox.classList.add("stampBox");
-            if (program[i].stamps.current > j || (program[i].stamps.current === program[i].stamps.max - 1)) {
+            if (program[i].stamps.current > j) {
                 writeStamp(stampBox);
             }
             programContainer.appendChild(stampBox);
