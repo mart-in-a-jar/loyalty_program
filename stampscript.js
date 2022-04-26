@@ -60,7 +60,6 @@ function appendStamp(programId) {
         }
     }
     else if (currentUser.rewardPrograms[programIndex].type === "manual") {
-        // stampBoxes[current].textContent = "X"
         stampBoxes[current].classList.add("usedCoupon");
         program.classList.add("bonusTriggered");
         bonusCountInfo.textContent = "Kupong benyttet";

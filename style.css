@@ -146,8 +146,7 @@ body {
 }
 
 .bonusTriggered h2,
-.bonusTriggered .bonusCount,
-.bonusTriggered .stampBox:last-of-type span:after {
+.bonusTriggered .bonusCount, {
     background-color: var(--altColor);
     display: inline-block;
     border: 2px solid rgba(0, 0, 0, 0.253);
@@ -180,12 +179,26 @@ body {
     animation: pulsate 2s linear infinite;
 }
 
-.stampBox:nth-of-type(5) span:after {
+.stampBox:nth-of-type(5):after {
     content: "Halv pris!";
     position: absolute;
-    transform: translate(-105px, 65px);
+    transform: translateY(8px);
     font-size: 1.5rem;
     font-style: italic;
+    opacity: 50%;
+    z-index: 0;
+}
+
+.bonusTriggered .stampBox:nth-of-type(5) span:after {
+    content: "Halv pris!";
+    position: absolute;
+    font-size: 1.5rem;
+    font-style: italic;
+    transform: translate(-105px, 65px);
+    opacity: 100%;
+    background-color: var(--altColor);
+    border: 2px solid rgba(0, 0, 0, 0.253);
+    padding: 3px 15px;
 }
 
 .addStamp {
@@ -237,6 +250,7 @@ body {
 
 svg {
     width: 90px;
+    z-index: 1;
 }
 
 .bonusCount {
