@@ -43,17 +43,19 @@ function appendStamp(programId) {
     const bonusCountInfo = document.querySelector(`.programContainerContainer[data-id="${programId}"] .bonusCount`);
     const program = document.querySelector(`.programContainerContainer[data-id="${programId}"]`);
     if (currentUser.rewardPrograms[programIndex].type === "open") {
-        if ( current >= max - 1) {
-            currentUser.rewardPrograms[programIndex].stamps.current = 0;
+        if ( current >= max) {
             stampBoxes.forEach(box => box.textContent = "");
+            currentUser.rewardPrograms[programIndex].stamps.current = 1;
+            writeStamp(stampBoxes[0]);
             // Increase by one for each time the stamps reset back to 0
             numberOfBonuses[programId] = numberOfBonuses[programId] ? numberOfBonuses[programId] + 1 : 1;
             bonusCountInfo.textContent = `Antall bonuser for denne handel: \u00a0 ${numberOfBonuses[programId]}`;
             program.classList.add("bonusTriggered");
         }
         else {
-            if (current === max-2) {
-                writeStamp(stampBoxes[current +1]);
+            if (current === max-1) {
+                // writeStamp(stampBoxes[current +1]);
+                // currentUser.rewardPrograms[programIndex].stamps.current = 0;
             }
             currentUser.rewardPrograms[programIndex].stamps.current += 1;
             writeStamp(stampBoxes[current]);
@@ -83,6 +85,7 @@ function drawStampCard(program) {
         programContainer.setAttribute("data-id", program[i].id);
         programContainer.classList.add("programContainer");
         for (let j = 0; j < program[i].stamps.max; j++) {
+            // if (program[i].stamps.current === program[i].stamps.max)
             let stampBox = document.createElement("div");
             stampBox.classList.add("stampBox");
             if (program[i].stamps.current > j || (program[i].stamps.current === program[i].stamps.max - 1)) {

@@ -136,9 +136,9 @@ body {
 .bonusTriggered {
     /* rainbow */
     /* background: linear-gradient(45deg, #660166, #e6ba1a, #1080a1, #00877d, #e16c1e, #dd3264); */
-    background-image: url("data:image/svg+xml,<svg width='50px' height='50px' opacity='50%' xmlns='http://www.w3.org/2000/svg'><text x='0' y='30px' font-size='30px' clip-path='url(%23emojiClipPath)'>⭐</text></svg>");
+    background-image: url("data:image/svg+xml,<svg width='50px' height='50px' opacity='10%' xmlns='http://www.w3.org/2000/svg'><text x='0' y='30px' font-size='30px' clip-path='url(%23emojiClipPath)'>⭐</text></svg>");
     background-repeat: space;
-    animation: scaleInOut 0.9s infinite;
+    animation: scaleInOut 0.9s;
 }
 
 .bonusTriggered h2,
@@ -176,9 +176,9 @@ body {
 }
 
 .stampBox:last-of-type span:after {
-    content: "Bonus på neste!";
+    content: "Halv pris!";
     position: absolute;
-    transform: translate(-60px, 35px);
+    transform: translate(-55px, 35px);
     font-size: 1.1rem;
     font-style: italic;
 }
