@@ -57,9 +57,7 @@ function appendStamp(programId) {
                 bonusCountInfo.textContent = `Antall bonuser for denne handel: \u00a0 ${numberOfBonuses[programId]}`;
                 program.classList.add("bonusTriggered");
                 startConfetti();
-                setTimeout(() => {
-                    stopConfetti();
-                }, 1600);
+                setTimeout(stopConfetti, 1600);
             }
         }
     }

@@ -179,7 +179,7 @@ body {
     animation: pulsate 2s linear infinite;
 }
 
-.stampBox:nth-of-type(5):after {
+.stampBox:last-of-type:not(:only-of-type):after {
     content: "Halv pris!";
     position: absolute;
     transform: translateY(8px);
@@ -189,7 +189,7 @@ body {
     z-index: 0;
 }
 
-.bonusTriggered .stampBox:nth-of-type(5) span:after {
+.bonusTriggered .stampBox:last-of-type:not(:only-of-type) span:after {
     content: "Halv pris!";
     position: absolute;
     font-size: 1.5rem;
