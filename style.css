@@ -91,11 +91,14 @@ h3 {
     background-position: 15px;
     background-color: #ffffff;
     z-index: -1;
+    position: absolute;
+    bottom: 0;
 }
 
 #phoneQR {
     align-self: center;
-    margin: 30px 0px 50px 90px;
+    margin: 0px 0px 50px 90px;
+    width: 400px;
 }
 
 #qrCode:focus {

@@ -5,8 +5,11 @@ let stampPool = [];
 const qrCode = localStorage.getItem("currentQrCode");
 let users = JSON.parse(localStorage.getItem("users"));
 let numberOfBonuses = {};
+const input = document.querySelector("#qrCode");
 
 const cardContainer = document.querySelector(".stampCards");
+let secondsSinceInteraction;
+const secondsBeforeTimeout = 10;
 
 const userMatch = user => user.guid === qrCode;
 
@@ -132,3 +135,40 @@ buttons.forEach(button => {
         appendStamp(id);
     });
 });
+
+// Change user when QR scanned
+window.addEventListener("keypress", e => {
+    if (e.key === "Enter") {
+        newQrCode = input.value;
+        input.value = "";
+        let userExists = users.some(user => user.guid === newQrCode);
+        if (userExists) {
+            localStorage.setItem("currentQrCode", newQrCode);
+            location.reload()
+        }
+}
+    
+});
+
+input.addEventListener("blur", () => {
+    setTimeout(() => {
+        input.focus(); 
+    }, 20);
+});
+
+
+// Go back after X seconds
+function idleTimeout(time, timeout) {
+    time = 0;
+    ["click", "mousemove", "touchstart", "touchmove"].forEach(e => {
+    window.addEventListener(e, () => time = 0);
+});
+    setInterval(() => {
+        time++;
+        if (time > timeout) {
+            window.location.href = "index.html";
+        }
+    }, 1000);
+}
+
+idleTimeout(secondsSinceInteraction, secondsBeforeTimeout);
