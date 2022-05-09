@@ -85,12 +85,17 @@ h3 {
     margin: 120px 0 100px;
     font-size: 1.3em;
     padding: 23px 23px 23px 71px;
-    /* text-align: center; */
     align-self: center;
     background: url(img/search-icon.svg);
     background-repeat: no-repeat;
     background-position: 15px;
     background-color: #ffffff;
+    z-index: -1;
+}
+
+#phoneQR {
+    align-self: center;
+    margin: 30px 0px 50px 90px;
 }
 
 #qrCode:focus {
