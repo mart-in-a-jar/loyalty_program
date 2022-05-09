@@ -90,7 +90,12 @@ const usersManual = [
                   {
                       "current": 0,
                       "max": 5
-                  }
+                  },
+                  "tags":
+                  [
+                      "akademika"
+                  ],
+                  "transferedFromAkademika": true
               },
               {
                   "id": 2,
@@ -115,7 +120,10 @@ const usersManual = [
                     {
                         "current": 0,
                         "max": 1
-                    }
+                    },
+                    "tags":
+                    [
+                    ]
                 }
         ]
     },
@@ -147,7 +155,12 @@ const usersManual = [
                 {
                     "current": 2,
                     "max": 5
-                }
+                },
+                "tags":
+                [
+                    "akademika"
+                ],
+                "transferedFromAkademika": false
             },
             {
                 "id": 2,
@@ -172,7 +185,10 @@ const usersManual = [
                   {
                       "current": 0,
                       "max": 1
-                  }
+                  },
+                  "tags":
+                  [
+                  ]
               }
       ]
   },
@@ -204,7 +220,12 @@ const usersManual = [
                 {
                     "current": 1,
                     "max": 5
-                }
+                },
+                "tags":
+                [
+                    "akademika"
+                ],
+                "transferedFromAkademika": true
             },
             {
                 "id": 2,
@@ -229,7 +250,10 @@ const usersManual = [
                   {
                       "current": 0,
                       "max": 1
-                  }
+                  },
+                  "tags":
+                  [
+                  ]
               }
       ]
   },
@@ -261,7 +285,12 @@ const usersManual = [
                 {
                     "current": 0,
                     "max": 5
-                }
+                },
+                "tags":
+                [
+                    "akademika"
+                ],
+                "transferedFromAkademika": false
             },
             {
                 "id": 2,
@@ -286,7 +315,10 @@ const usersManual = [
                   {
                       "current": 0,
                       "max": 1
-                  }
+                  },
+                  "tags":
+                  [
+                  ]
               }
       ]
   },
@@ -318,7 +350,12 @@ const usersManual = [
                 {
                     "current": 0,
                     "max": 5
-                }
+                },
+                "tags":
+                [
+                    "akademika"
+                ],
+                "transferedFromAkademika": false
             },
             {
                 "id": 2,
@@ -343,7 +380,10 @@ const usersManual = [
                   {
                       "current": 0,
                       "max": 1
-                  }
+                  },
+                  "tags":
+                  [
+                  ]
               }
       ]
   }

@@ -83,8 +83,7 @@ function appendStamp(programId) {
         currentUser.rewardPrograms.splice(programIndex, 1);
 
     }
-    users[currentUserIndex] = currentUser;
-    localStorage.setItem("users", JSON.stringify(users));
+    updateUsers();
 }
 
 function drawStampCard(program) {
@@ -121,7 +120,22 @@ function drawStampCard(program) {
         button.classList.add("addStamp");
         button.textContent = "Registrer kjøp";
         programContainer.appendChild(button);
-
+        if (program[i].tags.includes("akademika")) {
+            if (program[i].transferedFromAkademika) {
+                programContainerContainer.classList.add("transferedFromAkademika");
+            } else {
+                let akademikaButton = document.createElement("button");
+                akademikaButton.classList.add("akademikaButton");
+                akademikaButton.textContent = "Overfør fra akademika";
+                programContainerContainer.appendChild(akademikaButton);
+                akademikaButton.addEventListener("click", () => {
+                    let index = currentUser.rewardPrograms.findIndex(obj => {
+                        return obj.tags.includes("akademika");
+                    });
+                    transferStampsFromAkademika(index);
+                });
+            }
+        }
     }
 }
 
@@ -171,4 +185,16 @@ function idleTimeout(time, timeout) {
     }, 1000);
 }
 
-idleTimeout(secondsSinceInteraction, secondsBeforeTimeout);
+// idleTimeout(secondsSinceInteraction, secondsBeforeTimeout);
+
+function transferStampsFromAkademika(index) {
+    currentUser.rewardPrograms[index].transferedFromAkademika = true;
+    updateUsers();
+    location.reload();
+
+}
+
+function updateUsers() {
+    users[currentUserIndex] = currentUser;
+    localStorage.setItem("users", JSON.stringify(users));
+}

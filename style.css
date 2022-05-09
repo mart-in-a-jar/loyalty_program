@@ -137,6 +137,7 @@ body {
     margin-bottom: 15px;
     border-radius: 20px;
     border: 1.8px solid var(--blackColor);
+    position: relative;
 }
 
 .programContainer {
@@ -272,4 +273,28 @@ svg {
     position: fixed;
     top: 0;
     left: 0;
+}
+
+.transferedFromAkademika {
+    background: url(img/akademika.png) no-repeat top 5% right 1%;
+    background-size: 50px;
+    background-color: var(--altColor);
+}
+
+.akademikaButton {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border-radius: 10px;
+    border: 1px solid #9b9b9b;
+    background-color: rgba(255, 0, 0, 0.158);
+    padding: 5px 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.akademikaButton:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
 }
