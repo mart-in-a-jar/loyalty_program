@@ -185,7 +185,7 @@ function idleTimeout(time, timeout) {
     }, 1000);
 }
 
-// idleTimeout(secondsSinceInteraction, secondsBeforeTimeout);
+idleTimeout(secondsSinceInteraction, secondsBeforeTimeout);
 
 function transferStampsFromAkademika(index) {
     currentUser.rewardPrograms[index].transferedFromAkademika = true;
