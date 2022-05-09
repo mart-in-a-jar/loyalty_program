@@ -14,6 +14,7 @@ const infoBox = document.querySelector(".info");
 window.addEventListener("keypress", e => {
     if (e.key === "Enter") {
         qrCode = input.value;
+        input.value = "";
         let userExists = users.some(user => user.guid === qrCode);
         if (userExists) {
             localStorage.setItem("currentQrCode", qrCode);
