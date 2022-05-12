@@ -1,7 +1,5 @@
-const colors = ["#660166", "#e6ba1a", "#1080a1", "#00877d", "#e16c1e", "#dd3264"];
-const stamps = ["M448 336v-288C448 21.49 426.5 0 400 0H96C42.98 0 0 42.98 0 96v320c0 53.02 42.98 96 96 96h320c17.67 0 32-14.33 32-31.1c0-11.72-6.607-21.52-16-27.1v-81.36C441.8 362.8 448 350.2 448 336zM143.1 128h192C344.8 128 352 135.2 352 144C352 152.8 344.8 160 336 160H143.1C135.2 160 128 152.8 128 144C128 135.2 135.2 128 143.1 128zM143.1 192h192C344.8 192 352 199.2 352 208C352 216.8 344.8 224 336 224H143.1C135.2 224 128 216.8 128 208C128 199.2 135.2 192 143.1 192zM384 448H96c-17.67 0-32-14.33-32-32c0-17.67 14.33-32 32-32h288V448z"];
-let colorPool = [];
-let stampPool = [];
+const redColor = "#ca675a";
+const greenColor = "#59a079"; 
 const qrCode = localStorage.getItem("currentQrCode");
 let users = JSON.parse(localStorage.getItem("users"));
 let numberOfBonuses = {};
@@ -16,35 +14,8 @@ const userMatch = user => user.guid === qrCode;
 const currentUser = users.find(userMatch);
 const currentUserIndex = users.findIndex(userMatch);
 
-function random(input1, input2) {
-    rand1 = Math.floor(Math.random() * input1.length);
-    rand2 = Math.floor(Math.random() * input2.length);
-    return [input1[rand1], input2[rand2]];
-}
-
-function getRandomStamp() {
-    if (colorPool.length < 1) {
-        colorPool = [...colors];
-    }
-    if (stampPool.length < 1) {
-        stampPool = [...stamps];
-    }
-    const randoms = random(colorPool, stampPool);
-    colorPool.splice(colorPool.indexOf(randoms[0]), 1);
-    stampPool.splice(stampPool.indexOf(randoms[1]), 1);
-    return randoms;
-}
-
-function writeStamp(element) {
-/*     let stampSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    stampSvg.setAttribute("viewBox", "0 0 488 512")
-    let stamp = document.createElement("path");
-    stamp.setAttribute("d", getRandomStamp()[1]);
-    stamp.setAttribute("fill", getRandomStamp()[0]);
-    stampSvg.appendChild(stamp);
-    element.appendChild(stampSvg); */
-    //Fuck it
-    element.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="${getRandomStamp()[0]}" d="M448 336v-288C448 21.49 426.5 0 400 0H96C42.98 0 0 42.98 0 96v320c0 53.02 42.98 96 96 96h320c17.67 0 32-14.33 32-31.1c0-11.72-6.607-21.52-16-27.1v-81.36C441.8 362.8 448 350.2 448 336zM143.1 128h192C344.8 128 352 135.2 352 144C352 152.8 344.8 160 336 160H143.1C135.2 160 128 152.8 128 144C128 135.2 135.2 128 143.1 128zM143.1 192h192C344.8 192 352 199.2 352 208C352 216.8 344.8 224 336 224H143.1C135.2 224 128 216.8 128 208C128 199.2 135.2 192 143.1 192zM384 448H96c-17.67 0-32-14.33-32-32c0-17.67 14.33-32 32-32h288V448z"/></svg><span></span>`
+function writeStamp(element, color) {
+    element.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill=${color} d="M448 336v-288C448 21.49 426.5 0 400 0H96C42.98 0 0 42.98 0 96v320c0 53.02 42.98 96 96 96h320c17.67 0 32-14.33 32-31.1c0-11.72-6.607-21.52-16-27.1v-81.36C441.8 362.8 448 350.2 448 336zM143.1 128h192C344.8 128 352 135.2 352 144C352 152.8 344.8 160 336 160H143.1C135.2 160 128 152.8 128 144C128 135.2 135.2 128 143.1 128zM143.1 192h192C344.8 192 352 199.2 352 208C352 216.8 344.8 224 336 224H143.1C135.2 224 128 216.8 128 208C128 199.2 135.2 192 143.1 192zM384 448H96c-17.67 0-32-14.33-32-32c0-17.67 14.33-32 32-32h288V448z"/></svg><span></span>`;
 }
 
 document.querySelector(".userName").textContent = currentUser.name;
@@ -60,26 +31,26 @@ function appendStamp(programId) {
         if ( current >= max) {
             stampBoxes.forEach(box => box.textContent = "");
             currentUser.rewardPrograms[programIndex].stamps.current = 1;
-            writeStamp(stampBoxes[0]);
+            writeStamp(stampBoxes[0], greenColor);
         }
         else {
             currentUser.rewardPrograms[programIndex].stamps.current += 1;
-            writeStamp(stampBoxes[current]);
             if (current === max -1) {
+                writeStamp(stampBoxes[current], redColor);
                 // Increase by one for each time the stamps reset back to 0
                 numberOfBonuses[programId] = numberOfBonuses[programId] ? numberOfBonuses[programId] + 1 : 1;
                 bonusCountInfo.textContent = `Antall bonuser for denne handel: \u00a0 ${numberOfBonuses[programId]}`;
                 program.classList.add("bonusTriggered");
                 startConfetti();
                 setTimeout(stopConfetti, 1600);
-            }
+            } else writeStamp(stampBoxes[current], greenColor);
         }
     }
     else if (currentUser.rewardPrograms[programIndex].type === "manual") {
         stampBoxes[current].classList.add("usedCoupon");
         program.classList.add("bonusTriggered");
         bonusCountInfo.textContent = "Kupong benyttet";
-        writeStamp(stampBoxes[0]);
+        writeStamp(stampBoxes[0], redColor);
         currentUser.rewardPrograms.splice(programIndex, 1);
 
     }
@@ -106,7 +77,7 @@ function drawStampCard(program) {
             let stampBox = document.createElement("div");
             stampBox.classList.add("stampBox");
             if (program[i].stamps.current > j) {
-                writeStamp(stampBox);
+                writeStamp(stampBox, greenColor);
             }
             programContainer.appendChild(stampBox);
         }
