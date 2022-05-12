@@ -76,6 +76,8 @@ function drawStampCard(program) {
             }
             let stampBox = document.createElement("div");
             stampBox.classList.add("stampBox");
+            stampBox.setAttribute("data-id", program[i].id);
+            stampBox.classList.add("addStamp");
             if (program[i].stamps.current > j) {
                 writeStamp(stampBox, greenColor);
             }
@@ -116,8 +118,9 @@ const buttons = document.querySelectorAll(".addStamp");
 
 buttons.forEach(button => {
     button.addEventListener("click", e => {
-        const id = e.target.dataset.id;
-        appendStamp(id);
+        if (e.target.dataset.id) {
+            appendStamp(e.target.dataset.id);
+        }
     });
 });
 

@@ -210,7 +210,7 @@ body {
     padding: 3px 15px;
 }
 
-.addStamp {
+button.addStamp {
     height: 120px;
     margin-left: auto;
     border-radius: 40px;
@@ -222,7 +222,7 @@ body {
     cursor: pointer;
 }
 
-.addStamp:hover {
+button.addStamp:hover {
     background-color: black;
     color: white;
     border: 2px solid black;
