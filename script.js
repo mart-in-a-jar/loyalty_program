@@ -64,7 +64,7 @@ input.addEventListener("blur", () => {
 const usersManual = [
     {
         "guid": "40f94485-bf31-401f-b10b-a06554cfdaba",
-        "name": "User 1",
+        "name": "Dr. Mustachio",
         "rewardPrograms":
         [
             {
@@ -129,7 +129,7 @@ const usersManual = [
     },
     {
       "guid": "254b803b-add9-436a-afcb-993e9c23ccef",
-      "name": "User 2",
+      "name": "Tomas",
       "rewardPrograms":
       [
           {
@@ -194,7 +194,7 @@ const usersManual = [
   },
   {
       "guid": "391d1065-7659-4143-8939-baaee39cc4a5",
-      "name": "User 3",
+      "name": "Raketten",
       "rewardPrograms":
       [
           {
@@ -259,7 +259,7 @@ const usersManual = [
   },
   {
       "guid": "235819d8-1c86-46f0-a2fa-bfa3e5d22dc0",
-      "name": "User 4",
+      "name": "Lagendu",
       "rewardPrograms":
       [
           {
@@ -324,7 +324,7 @@ const usersManual = [
   },
   {
       "guid": "46ee279e-60bd-4875-9caa-5a033b028e60",
-      "name": "User 5",
+      "name": "Babatonde",
       "rewardPrograms":
       [
           {
