@@ -1,0 +1,300 @@
+html {
+    box-sizing: border-box;
+    --bgColor: #B5DBC6;
+    --altColor: #E1F6EB;
+    --blackColor: #2D2D2D;
+    font-family: "TTCommons-regular", sans-serif;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+@font-face {
+    font-family: TTCommons-regular;
+    src: url(fonts/TTCommons-Regular.ttf);
+}
+@font-face {
+    font-family: TTCommons-demibold;
+    src: url(fonts/TTCommons-DemiBold.ttf);
+}
+@font-face {
+    font-family: TTCommons-medium;
+    src: url(fonts/TTCommons-Medium.ttf);
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1.1) rotate(-10deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(10deg);
+    }
+    100% {
+        transform: scale(1.1) rotate(-10deg);
+    }
+}
+
+@keyframes scaleInOut {
+    from {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    to {
+        transform: scale(1);
+    }
+    
+}
+
+#logo {
+    position: absolute;
+    margin: 8px 40px;
+}
+
+h1 {
+    font-size: 88px;
+    align-self: center;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: -2.12px;
+    font-family: "TTCommons-mediun", sans-serif;
+}
+
+h2 {
+    margin: 0;
+    margin-left: 15px;
+    font-family: "TTCommons-mediun", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: -0.44px;
+}
+
+h3 {
+    font-size: 1.5rem;;
+}
+
+#qrCode {
+    
+    width: 580px;
+    height: 80px;
+    border-radius: 20px;
+    border: 1.5px solid var(--blackColor);
+    margin: 120px 0 100px;
+    font-size: 1.3em;
+    padding: 23px 23px 23px 71px;
+    align-self: center;
+    background: url(img/search-icon.svg);
+    background-repeat: no-repeat;
+    background-position: 15px;
+    background-color: #ffffff;
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+}
+
+#phoneQR {
+    align-self: center;
+    margin: 0px 0px 50px 90px;
+    width: 400px;
+}
+
+#qrCode:focus {
+    outline: none;
+}
+
+body {
+    margin: 0;
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start;
+    min-height: 70vh;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--bgColor);
+    padding: 20px;
+}
+
+.info {
+    color: red;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: "TTCommons-medium", sans-serif;
+}
+
+.infoContainer {
+    align-self: center;
+}
+
+.programContainerContainer {
+    background-color: var(--altColor);
+    padding: 35px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    border: 1.8px solid var(--blackColor);
+    position: relative;
+}
+
+.programContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.bonusTriggered {
+    /* rainbow */
+    /* background: linear-gradient(45deg, #660166, #e6ba1a, #1080a1, #00877d, #e16c1e, #dd3264); */
+    background-image: url("data:image/svg+xml,<svg width='50px' height='50px' opacity='10%' xmlns='http://www.w3.org/2000/svg'><text x='0' y='30px' font-size='30px' clip-path='url(%23emojiClipPath)'>⭐</text></svg>");
+    background-repeat: space;
+    animation: scaleInOut 0.9s;
+}
+
+.bonusTriggered h2,
+.bonusTriggered .bonusCount {
+    background-color: var(--altColor);
+    display: inline-block;
+    border: 2px solid rgba(0, 0, 0, 0.253);
+    padding: 3px 15px;
+}
+
+.bonusTriggered .stampBox {
+    background-color: var(--altColor);
+}
+
+.stampBox {
+    width: 110px;
+    height: 120px;
+    border: 2px solid rgba(80, 80, 80, 0.226);
+    margin: 20px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: no-repeat center/80% url(img/book.svg);
+}
+
+.stampBox:last-of-type {
+    margin-right: 50px;
+    background-color: rgba(200, 226, 200, 0.5);
+}
+
+.stampBox:last-of-type svg {
+    animation: pulsate 2s linear infinite;
+}
+
+.stampBox:last-of-type:not(:only-of-type):after {
+    content: "Halv pris!";
+    position: absolute;
+    transform: translateY(8px);
+    font-size: 1.5rem;
+    font-style: italic;
+    opacity: 50%;
+    z-index: 0;
+}
+
+.bonusTriggered .stampBox:last-of-type:not(:only-of-type) span:after {
+    content: "Halv pris!";
+    position: absolute;
+    font-size: 1.5rem;
+    font-style: italic;
+    transform: translate(-105px, 65px);
+    opacity: 100%;
+    background-color: var(--altColor);
+    border: 2px solid rgba(0, 0, 0, 0.253);
+    padding: 3px 15px;
+}
+
+button.addStamp {
+    height: 120px;
+    margin-left: auto;
+    border-radius: 40px;
+    border: 2px solid #9b9b9b;
+    background-color: rgb(180, 226, 180);
+    padding: 10.5px 27px;
+    font-weight: 400;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+button.addStamp:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+}
+
+.usedCoupon ~ button {
+    background-color: #d4d4d4;
+    color: #9b9b9b;
+}
+
+.usedCoupon ~ button:hover {
+    background-color: #d4d4d4;
+    color: #9b9b9b;
+    border: 2px solid #9b9b9b;
+    cursor: not-allowed;
+}
+
+
+.back a{
+    color: black;
+    text-decoration: none;
+    background-color: #ca675a;
+    padding: 20px 30px;
+    border-radius: 10px;
+    position: absolute;
+    top: 160px;
+    left: 20px;
+    font-size: 1.7rem;
+}
+
+.back a:hover {
+    outline: 2px solid black;
+}
+
+svg {
+    width: 90px;
+    z-index: 1;
+}
+
+.bonusCount {
+    color: rgb(211, 68, 68);
+    -webkit-text-stroke: rgb(255, 255, 255) 0.5px;
+    font-size: 2rem;
+    margin: -10px 15px 0px;
+}
+
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.transferedFromAkademika {
+    background: url(img/akademika.png) no-repeat top 5% right 1%;
+    background-size: 50px;
+    background-color: var(--altColor);
+}
+
+.akademikaButton {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border-radius: 10px;
+    border: 1px solid #9b9b9b;
+    background-color: rgba(255, 0, 0, 0.158);
+    padding: 10px 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.akademikaButton:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+}

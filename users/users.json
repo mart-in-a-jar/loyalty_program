@@ -1,0 +1,329 @@
+{
+    "users": [
+      {
+          "guid": "40f94485-bf31-401f-b10b-a06554cfdaba",
+          "name": "Dr. Mustachio",
+          "rewardPrograms":
+          [
+              {
+                  "id": 3,
+                  "department": "bookstore",
+                  "name": 
+                  {
+                      "no": "Halv pris på hver 5. bok",
+                      "en": "Half price on every 5th. book"
+                  },
+                  "type": "open",
+                  "status": "active",
+                  "description":
+                      {
+                       "public": 
+                       {
+                           "no": "Norsk beskrivelse til appen, klippekort",
+                           "en": "English description for the app, stamp card"
+                       },
+                       "internal": "Beskrivelse til ansatte, klippekort"
+                    },
+                    "stamps":
+                    {
+                        "current": 0,
+                        "max": 5
+                    },
+                    "tags":
+                    [
+                        "akademika"
+                    ],
+                    "transferedFromAkademika": true
+                },
+                {
+                    "id": 2,
+                    "department": "bookstore",
+                    "name": 
+                    {
+                        "no": "Kupong på gratis penn",
+                        "en": "Coupon: free pen"
+                    },
+                    "type": "manual",
+                    "status": "active",
+                    "description":
+                        {
+                         "public": 
+                         {
+                             "no": "Norsk beskrivelse til appen, kupong",
+                             "en": "English description for the app, coupon"
+                         },
+                         "internal": "Beskrivelse til ansatte, kupong"
+                      },
+                      "stamps":
+                      {
+                          "current": 0,
+                          "max": 1
+                      },
+                      "tags":
+                      [
+                      ]
+                  }
+          ]
+      },
+      {
+        "guid": "254b803b-add9-436a-afcb-993e9c23ccef",
+        "name": "Tomas",
+        "rewardPrograms":
+        [
+            {
+                "id": 3,
+                "department": "bookstore",
+                "name": 
+                {
+                    "no": "Halv pris på hver 5. bok",
+                    "en": "Half price on every 5th. book"
+                },
+                "type": "open",
+                "status": "active",
+                "description":
+                    {
+                     "public": 
+                     {
+                         "no": "Norsk beskrivelse til appen, klippekort",
+                         "en": "English description for the app, stamp card"
+                     },
+                     "internal": "Beskrivelse til ansatte, klippekort"
+                  },
+                  "stamps":
+                  {
+                      "current": 2,
+                      "max": 5
+                  },
+                  "tags":
+                  [
+                      "akademika"
+                  ],
+                  "transferedFromAkademika": false
+              },
+              {
+                  "id": 2,
+                  "department": "bookstore",
+                  "name": 
+                  {
+                      "no": "Kupong på gratis penn",
+                      "en": "Coupon: free pen"
+                  },
+                  "type": "manual",
+                  "status": "active",
+                  "description":
+                      {
+                       "public": 
+                       {
+                           "no": "Norsk beskrivelse til appen, kupong",
+                           "en": "English description for the app, coupon"
+                       },
+                       "internal": "Beskrivelse til ansatte, kupong"
+                    },
+                    "stamps":
+                    {
+                        "current": 0,
+                        "max": 1
+                    },
+                    "tags":
+                    [
+                    ]
+                }
+        ]
+    },
+    {
+        "guid": "391d1065-7659-4143-8939-baaee39cc4a5",
+        "name": "Raketten",
+        "rewardPrograms":
+        [
+            {
+                "id": 3,
+                "department": "bookstore",
+                "name": 
+                {
+                    "no": "Halv pris på hver 5. bok",
+                    "en": "Half price on every 5th. book"
+                },
+                "type": "open",
+                "status": "active",
+                "description":
+                    {
+                     "public": 
+                     {
+                         "no": "Norsk beskrivelse til appen, klippekort",
+                         "en": "English description for the app, stamp card"
+                     },
+                     "internal": "Beskrivelse til ansatte, klippekort"
+                  },
+                  "stamps":
+                  {
+                      "current": 1,
+                      "max": 5
+                  },
+                  "tags":
+                  [
+                      "akademika"
+                  ],
+                  "transferedFromAkademika": true
+              },
+              {
+                  "id": 2,
+                  "department": "bookstore",
+                  "name": 
+                  {
+                      "no": "Kupong på gratis penn",
+                      "en": "Coupon: free pen"
+                  },
+                  "type": "manual",
+                  "status": "active",
+                  "description":
+                      {
+                       "public": 
+                       {
+                           "no": "Norsk beskrivelse til appen, kupong",
+                           "en": "English description for the app, coupon"
+                       },
+                       "internal": "Beskrivelse til ansatte, kupong"
+                    },
+                    "stamps":
+                    {
+                        "current": 0,
+                        "max": 1
+                    },
+                    "tags":
+                    [
+                    ]
+                }
+        ]
+    },
+    {
+        "guid": "235819d8-1c86-46f0-a2fa-bfa3e5d22dc0",
+        "name": "Lagendu",
+        "rewardPrograms":
+        [
+            {
+                "id": 3,
+                "department": "bookstore",
+                "name": 
+                {
+                    "no": "Halv pris på hver 5. bok",
+                    "en": "Half price on every 5th. book"
+                },
+                "type": "open",
+                "status": "active",
+                "description":
+                    {
+                     "public": 
+                     {
+                         "no": "Norsk beskrivelse til appen, klippekort",
+                         "en": "English description for the app, stamp card"
+                     },
+                     "internal": "Beskrivelse til ansatte, klippekort"
+                  },
+                  "stamps":
+                  {
+                      "current": 0,
+                      "max": 5
+                  },
+                  "tags":
+                  [
+                      "akademika"
+                  ],
+                  "transferedFromAkademika": false
+              },
+              {
+                  "id": 2,
+                  "department": "bookstore",
+                  "name": 
+                  {
+                      "no": "Kupong på gratis penn",
+                      "en": "Coupon: free pen"
+                  },
+                  "type": "manual",
+                  "status": "active",
+                  "description":
+                      {
+                       "public": 
+                       {
+                           "no": "Norsk beskrivelse til appen, kupong",
+                           "en": "English description for the app, coupon"
+                       },
+                       "internal": "Beskrivelse til ansatte, kupong"
+                    },
+                    "stamps":
+                    {
+                        "current": 0,
+                        "max": 1
+                    },
+                    "tags":
+                    [
+                    ]
+                }
+        ]
+    },
+    {
+        "guid": "46ee279e-60bd-4875-9caa-5a033b028e60",
+        "name": "Babatonde",
+        "rewardPrograms":
+        [
+            {
+                "id": 3,
+                "department": "bookstore",
+                "name": 
+                {
+                    "no": "Halv pris på hver 5. bok",
+                    "en": "Half price on every 5th. book"
+                },
+                "type": "open",
+                "status": "active",
+                "description":
+                    {
+                     "public": 
+                     {
+                         "no": "Norsk beskrivelse til appen, klippekort",
+                         "en": "English description for the app, stamp card"
+                     },
+                     "internal": "Beskrivelse til ansatte, klippekort"
+                  },
+                  "stamps":
+                  {
+                      "current": 0,
+                      "max": 5
+                  },
+                  "tags":
+                  [
+                      "akademika"
+                  ],
+                  "transferedFromAkademika": false
+              },
+              {
+                  "id": 2,
+                  "department": "bookstore",
+                  "name": 
+                  {
+                      "no": "Kupong på gratis penn",
+                      "en": "Coupon: free pen"
+                  },
+                  "type": "manual",
+                  "status": "inactive",
+                  "description":
+                      {
+                       "public": 
+                       {
+                           "no": "Norsk beskrivelse til appen, kupong",
+                           "en": "English description for the app, coupon"
+                       },
+                       "internal": "Beskrivelse til ansatte, kupong"
+                    },
+                    "stamps":
+                    {
+                        "current": 0,
+                        "max": 1
+                    },
+                    "tags":
+                    [
+                    ]
+                }
+        ]
+    }
+    ]
+  }
