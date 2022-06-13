@@ -1,3 +1,4 @@
+import { startConfetti, stopConfetti } from "./confetti";
 const redColor = "#ca675a";
 const greenColor = "#59a079"; 
 const qrCode = localStorage.getItem("currentQrCode");
