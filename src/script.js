@@ -324,7 +324,7 @@ const usersManual = [
   },
   {
       "guid": "46ee279e-60bd-4875-9caa-5a033b028e60",
-      "name": "Babatonde",
+      "name": "Test Person 2",
       "rewardPrograms":
       [
           {
